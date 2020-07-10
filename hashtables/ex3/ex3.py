@@ -1,10 +1,28 @@
 def intersection(arrays):
     """
     YOUR CODE HERE
-    """
-    # Your code here
 
-    return result
+    solution:
+    loop over list
+    loop over sub list within list
+    save all items in first list to object
+    on second loop save only the items that were already in the object
+    so on so on
+    """
+    nums = {}
+    output = []
+    for item in arrays[0]:
+        nums[item] = item
+
+    for array in arrays:
+        current = {}
+        for item in array:
+            if item in nums:
+                current[item] = item
+        nums = current
+    for item in nums.values():
+        output.append(item)
+    return output
 
 
 if __name__ == "__main__":
